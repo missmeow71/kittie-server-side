@@ -1,0 +1,17 @@
+{
+  "name": "kittie-server-side",
+  "version": "1.0.0",
+  "description": "Show Me Your Kitties P3 Project",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Sandy",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.3"
+  }
+}
