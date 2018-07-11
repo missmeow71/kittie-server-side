@@ -13,9 +13,18 @@ const kittie = require('./api/kittie');
 
 
 app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(cors({
+    origin: '',
+    optionsSuccessStatus: 200
+}))
+
+
+
 
 app.use('/api/v1/kittie', kittie);
 
