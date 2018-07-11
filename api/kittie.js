@@ -8,7 +8,7 @@ function validCatCard(catCard) {
     const hasImgUrl = typeof catCard.imgUrl == 'string' && catCard.imgUrl.trim() != ""
     const hasCatName = typeof catCard.catName == 'string' && catCard.catName.trim() != ""
     const hasComment = typeof catCard.comment == 'string' && catCard.comment.trim() != ""
-    const hasRating = typeof catCard.rating == 'number' && catCard.rating.trim() != ""
+    const hasRating = typeof catCard.rating == 'string' && catCard.rating.trim() != ""
     
 
     return hasImgUrl && hasCatName && hasComment && hasRating 
@@ -29,6 +29,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res, next) => {
+    console.log(req.body)
     if (validCatCard(req.body)) {
      queries.create(req.body).then(kittie => {
          res.json(kittie[0])
